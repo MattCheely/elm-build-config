@@ -18,6 +18,7 @@
   ],
   "license": "MIT",
   "author": "Matt Cheely <matt_cheely@fastmail.com>",
+  "homepage": "https://github.com/MattCheely/elm-build-config#readme",
   "devDependencies": {
     "@types/mustache": "^4.1.2",
     "@types/node": "^17.0.0",
