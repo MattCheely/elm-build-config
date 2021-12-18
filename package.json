@@ -1,6 +1,6 @@
 {
   "name": "elm-build-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generates static build-time configuration modules for elm apps",
   "main": "index.js",
   "files": [
