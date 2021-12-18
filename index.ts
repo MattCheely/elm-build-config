@@ -3,24 +3,25 @@ import * as path from "path";
 import { promises as fs } from "fs";
 const { writeFile, mkdir } = fs;
 
-export interface Config {
+export interface ConfigData {
   [key: string]: boolean | string | number;
 }
 
-export interface FileOptions {
+export interface Options {
   srcDir: string;
   moduleName: string;
 }
 
-const defaultFileOptions = {
+const defaultOptions = {
   srcDir: "src",
   moduleName: "BuildConfig"
 };
 
 export async function createConfigFile(
-  configuration: Config,
-  fileOptions: FileOptions = defaultFileOptions
+  configuration: ConfigData,
+  options: Options = defaultOptions
 ) {
+  const fileOptions = { ...defaultOptions, ...options };
   const config = buildConfigList(configuration);
   const outFile = path.join(
     fileOptions.srcDir,
@@ -36,7 +37,7 @@ export async function createConfigFile(
   await writeFile(outFile, output);
 }
 
-function buildConfigList(configuration: Config) {
+function buildConfigList(configuration: ConfigData) {
   return Object.entries(configuration)
     .map(([key, value]) => {
       let configType = typeof value;

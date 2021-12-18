@@ -1,16 +1,16 @@
 {
-  "name": "elm-gen-config",
+  "name": "elm-build-config",
   "version": "1.0.0",
-  "description": "Generate static config for elm projects",
-  "type": "module",
+  "description": "Generates static build-time configuration modules for elm apps",
   "main": "index.js",
   "files": ["index.js", "index.d.ts"],
   "scripts": {
     "build": "tsc",
     "test": "tsc && test/run.mjs"
   },
-  "author": "",
+  "keywords": ["elm", "configuration", "build"],
   "license": "MIT",
+  "author": "Matt Cheely <matt_cheely@fastmail.com>",
   "devDependencies": {
     "@types/mustache": "^4.1.2",
     "@types/node": "^17.0.0",

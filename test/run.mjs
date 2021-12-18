@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { createConfigFile } from "../index.js";
+import * as buildConfig from "../index.js";
+const { createConfigFile } = buildConfig;
 import path from "path";
 import { fileURLToPath } from "url";
 import { spawnSync } from "child_process";
