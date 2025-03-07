@@ -89,7 +89,7 @@ function needsTripleQuotes(str: string): boolean {
  * Escape double-quotes and unicode-escaped shaped things
  */
 function escapeSpecial(str: string): string {
-  return str.replaceAll('"', '\\"').replaceAll("\\u", "\\\\u");
+  return str.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
 }
 
 const template = `

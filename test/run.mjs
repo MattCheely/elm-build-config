@@ -22,6 +22,7 @@ async function testGoodConfig() {
       stringWithQuotes: '"This is quoted"',
       stringWithQuotesAndLineBreak: '"Line 1\nLine 2"',
       stringWithUnicodePatterns: "\\u{20A1}\\u{X}\\u{}\\u1234",
+      stringWithBackslash: "one: \\ two: \\\\ three: \\\\\\",
       int: 1,
       float: 3.14159
     },

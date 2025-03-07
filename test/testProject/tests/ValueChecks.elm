@@ -28,6 +28,11 @@ suite =
                 Expect.equal
                     Config.stringWithUnicodePatterns
                     "\\u{20A1}\\u{X}\\u{}\\u1234"
+        , test "string with backslash" <|
+            \_ ->
+                Expect.equal
+                    Config.stringWithBackslash
+                    "one: \\ two: \\\\ three: \\\\\\"
         , test "int" <|
             \_ ->
                 Expect.equal Config.int 1
