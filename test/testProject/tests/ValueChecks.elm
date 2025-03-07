@@ -27,7 +27,7 @@ suite =
             \_ ->
                 Expect.equal
                     Config.stringWithUnicodePatterns
-                    "\\u{20A1}\\u{20A2}\\u{X}\\u{}"
+                    "\\u{20A1}\\u{X}\\u{}\\u1234"
         , test "int" <|
             \_ ->
                 Expect.equal Config.int 1
