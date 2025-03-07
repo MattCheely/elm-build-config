@@ -18,6 +18,10 @@ async function testGoodConfig() {
     {
       bool: true,
       string: "hello",
+      stringWithLineBreak: 'line 1\nline 2',
+      stringWithQuotes: '"This is quoted"',
+      stringWithQuotesAndLineBreak: '"Line 1\nLine 2"',
+      stringWithUnicodePatterns: "\\u{20A1}\\u{20A2}\\u{X}\\u{}",
       int: 1,
       float: 3.14159
     },
@@ -25,8 +29,8 @@ async function testGoodConfig() {
   );
 
   const result = spawnSync(
-    "elm",
-    ["make", "src/Main.elm", "--output=/dev/null"],
+    "elm-test",
+    [],
     {
       cwd: elmDir,
       stdio: "inherit"
@@ -34,12 +38,12 @@ async function testGoodConfig() {
   );
 
   if (result.status != 0) {
-    throw new Error("Elm failed to compile.");
+    throw new Error("Elm tests failed");
   }
 }
 
 async function testBadConfig() {
-  let success = false;
+  let didFail = false;
   try {
     await createConfigFile(
       {
@@ -52,10 +56,10 @@ async function testBadConfig() {
       { srcDir: elmSrc, moduleName: "Static.Config" }
     );
   } catch (e) {
-    success = true;
+    didFail = true;
   }
 
-  if (!success) {
+  if (!didFail) {
     throw new Error("Bad config values accepted");
   }
 }

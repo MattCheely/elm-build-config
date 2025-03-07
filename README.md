@@ -48,6 +48,14 @@ The available options are:
 generated at the appropriate path based on the source dir and the chosen name.
 (Default: `BuildConfig`)
 
+# Notes
+
+This is mostly used in my own projects, so it only gets testing for the type
+of data I am parsing. That means it may have some issues where it generates
+invalid code (probalby in strings). If you find a value that's not correctly
+translated to Elm, feel free to open an issue with example input that
+reproduces the problem.
+
 # Example Usage
 
 elm-build-config isn't that useful on it's own. It's intended to be part of a
@@ -183,5 +191,3 @@ update msg model =
                 ( { model | url = url }, Cmd.none )
 
 ```
-
-And that's it! (probably, I just built this thing)
